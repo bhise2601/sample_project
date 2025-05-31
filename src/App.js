@@ -6,17 +6,17 @@ function App() {
   const [patients, setPatients] = useState([]);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    axios.get('https://api.internal.placing.com/api/patients/patients')
-      .then(response => {
-        console.log('API Response:-------------------', response);
-        setPatients(response.data);
-      })
-      .catch(error => {
-        console.error('API Error:', error);
-        setError('Failed to fetch patients');
-      });
-  }, []);
+ useEffect(() => {
+  axios.get('/api/patients/patients') // Changed to relative path
+    .then(response => {
+      console.log('API Response:-------------------', response);
+      setPatients(response.data);
+    })
+    .catch(error => {
+      console.error('API Error:', error);
+      setError('Failed to fetch patients');
+    });
+}, []);
 
   return (
     <div style={{ padding: '20px' }}>
