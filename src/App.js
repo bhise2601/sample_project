@@ -7,9 +7,9 @@ function App() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/patients/patients')
+    axios.get('https://api.internal.placing.com/api/patients/patients')
       .then(response => {
-        console.log('API Response:----------------', response);
+        console.log('API Response:-------------------', response);
         setPatients(response.data);
       })
       .catch(error => {
