@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     axios.get('http://localhost:8000/api/patients/patients')
       .then(response => {
-        console.log('API Response:', response);
+        console.log('API Response:----------------', response);
         setPatients(response.data);
       })
       .catch(error => {
